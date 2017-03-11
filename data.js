@@ -2,7 +2,7 @@ const fs = require('fs');
 
 // Define <thead> and <tbody> vars to be filled later on.
 var thead = document.getElementsByTagName('thead')[0],
-	tbody = document.getElementsByTagName('tbody')[0];
+    tbody = document.getElementsByTagName('tbody')[0];
 
 // Fetch (string type) contents of data.json.
 render(JSON.parse(fs.readFileSync(localStorage.path)));

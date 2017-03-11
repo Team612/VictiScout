@@ -28,7 +28,7 @@ for (i = 0; i < tags.length; i++) inputs[tags[i].id] = tags[i];
 
 
 // Submit match data.
-pg.submit.onclick = function() {
+pg.submit.onclick = function () {
     if (
         // If the user has entered a team number
         pg.team.value
@@ -67,7 +67,7 @@ function write(match) {
     // TODO: Getting size could function as a means of checking its existence in theory,
     // but for now an error occurs when you get stats of a nonexistent file.
     var data = (fs.existsSync() && fs.statSync(pg.path.value).size > 0) ? JSON.parse(fs.readFileSync(pg.path.value)) : [];
-    data.push(match)
+    data.push(match);
     fs.writeFileSync(pg.path.value, JSON.stringify(data));
 }
 
@@ -92,12 +92,12 @@ function resetInputs() {
 
 // When reset button is clicked, trigger reset
 // TODO: call this function directly
-pg.reset.onclick = function() {
+pg.reset.onclick = function () {
     if (window.confirm('Really reset inputs?')) resetInputs();
-}
+};
 
 // When 'View Data' button is clicked
-pg.view.onclick = function() {
+pg.view.onclick = function () {
     // Store the path to the data document
     localStorage.path = pg.path.value;
     // Tell main.js to open rendered data window
@@ -105,9 +105,19 @@ pg.view.onclick = function() {
 };
 
 // When user clicks on the screen, check if they clicked on an increase/decrease button
-onclick = function(e) {
-    // If click was on a decrease button > decrease the value of the adjacent input (but only if it's over 0)
+onclick = function (e) {
+    // If click was on a decrease button > decrease the value of the adjacent input by 1 (but only if it's over zero)
     if (e.target.className === 'decrease' && e.target.nextElementSibling.value > 0) e.target.nextElementSibling.value = parseInt(e.target.nextElementSibling.value) - 1;
-    // If click was on an increase button > increase the value of the adjacent input
+
+    // If click was on a decrease5 button > decrease the value of the adjacent input by 5 (but only down to zero)
+    if (e.target.className === 'decrease5' && e.target.nextElementSibling.value > 0) {
+        _val = parseInt(e.target.nextElementSibling.value) - 1;
+        e.target.nextElementSibling.value = _val > 0 ? _val : 0;
+    }
+
+    // If click was on an increase button > increase the value of the adjacent input by 1
     if (e.target.className === 'increase') e.target.previousElementSibling.value = parseInt(e.target.previousElementSibling.value) + 1;
+
+    // If click was on an increase5 button > increase the value of the adjacent input by 5
+    if (e.target.className === 'increase5') e.target.previousElementSibling.value = parseInt(e.target.previousElementSibling.value) + 1;
 };
