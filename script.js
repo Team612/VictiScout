@@ -111,7 +111,7 @@ onclick = function (e) {
 
     // If click was on a decrease5 button > decrease the value of the adjacent input by 5 (but only down to zero)
     if (e.target.className === 'decrease5' && e.target.nextElementSibling.value > 0) {
-        _val = parseInt(e.target.nextElementSibling.value) - 1;
+        _val = parseInt(e.target.nextElementSibling.value) - 5;
         e.target.nextElementSibling.value = _val > 0 ? _val : 0;
     }
 
@@ -119,5 +119,5 @@ onclick = function (e) {
     if (e.target.className === 'increase') e.target.previousElementSibling.value = parseInt(e.target.previousElementSibling.value) + 1;
 
     // If click was on an increase5 button > increase the value of the adjacent input by 5
-    if (e.target.className === 'increase5') e.target.previousElementSibling.value = parseInt(e.target.previousElementSibling.value) + 1;
+    if (e.target.className === 'increase5') e.target.previousElementSibling.value = parseInt(e.target.previousElementSibling.value) + 5;
 };

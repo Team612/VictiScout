@@ -100,7 +100,9 @@ input.steam {
 }
 
 .increase,
-.decrease {
+.increase5,
+.decrease,
+.decrease5{
     width: 25px;
 }
 
