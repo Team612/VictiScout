@@ -53,13 +53,6 @@ button:active {
     margin: 5px;
 }
 
-.tasks img {
-    display: block;
-    fill: white;
-    height: 120px;
-    margin-bottom: 10px;
-}
-
 .row:first-of-type {
     padding: 0;
 }
