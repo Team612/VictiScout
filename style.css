@@ -39,6 +39,21 @@ button:active {
     color: #aaa;
 }
 
+.subrow {
+    white-space: nowrap;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.subrow > * {
+    display: inline;
+}
+
+.subrow > input {
+    width: 50px;
+}
+
 .row {
     white-space: nowrap;
     padding: 5px 0;

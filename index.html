@@ -8,78 +8,105 @@
 </head>
 
 <body style="overflow: hidden">
-    <div class="row">
-        <input type="number" id="team" placeholder="Team #" class="large">
-        <input type="number" id="match" placeholder="Match #" class="large">
-        <h2 id="path-label">Save to:</h2>
-        <input id="path" class="special large" type="text">
-        <p id="path-warning">INVALID DIRECTORY</p>
-        <button id="submit">Submit</button>
-        <button id="reset">Reset</button>
-        <button id="view">View Data</button>
+<div class="row">
+    <input type="number" id="team" placeholder="Team #" class="large">
+    <input type="number" id="match" placeholder="Match #" class="large">
+    <h2 id="path-label">Save to:</h2>
+    <input id="path" class="special large" type="text">
+    <p id="path-warning">INVALID DIRECTORY</p>
+    <button id="submit">Submit</button>
+    <button id="reset">Reset</button>
+    <button id="view">View Data</button>
+</div>
+<div class="row">
+    <h1>AUTO</h1>
+    <div>
+        <h2>AUTO Low Boiler</h2>
+        <button class="decrease">-</button>
+        <input type="number" id="auto-low-boiler" value="0" min="0">
+        <button class="increase">+</button>
     </div>
-    <div class="row">
-        <h1>AUTO</h1>
-        <div>
-            <h2>AUTO Gear Delivery</h2>
-            <button class="decrease">-</button>
-            <input type="number" id="auto-gear" value="0" min="0">
-            <button class="increase">+</button>
+    <div>
+        <h2>AUTO High Boiler</h2>
+        <button class="decrease5">-</button>
+        <input type="number" id="auto-high-boiler" value="0" min="0">
+        <button class="increase5">+</button>
+    </div>
+    <div>
+        <h2>AUTO Gear Delivery</h2>
+        <button class="decrease">-</button>
+        <input type="number" id="auto-gear" value="0" min="0">
+        <button class="increase">+</button>
+    </div>
+    <div>
+        <h2>AUTO Gear Position</h2>
+        <select id="gear-pos">
+            <option>N/A</option>
+            <option>Left</option>
+            <option>Center</option>
+            <option>Right</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <h1>TELEOP</h1>
+    <div>
+        <h2>Low Boiler</h2>
+        <button class="decrease">-</button>
+        <input type="number" id="low-boiler" value="0" min="0">
+        <button class="increase">+</button>
+    </div>
+    <div>
+        <h2>High Boiler Scores</h2>
+        <button class="decrease5">-</button>
+        <input type="number" id="high-boiler" value="0" min="0">
+        <button class="increase5">+</button>
+    </div>
+    <div>
+        <h2>High Boiler Misses</h2>
+        <button class="decrease5">-</button>
+        <input type="number" id="high-boiler-misses" value="0" min="0">
+        <button class="increase5">+</button>
+    </div>
+    <div>
+        <h2>Gears Delivered</h2>
+        <button class="decrease">-</button>
+        <input type="number" id="gear" value="0" min="0">
+        <button class="increase">+</button>
+    </div>
+    <div>
+        <h2>Climbed?</h2>
+        <select id="climbed">
+            <option>No</option>
+            <option>Attempted</option>
+            <option>Yes</option>
+        </select>
+    </div>
+    <div style="padding-left: 30px">
+        <h3 style="text-align: left">FUEL</h3>
+        <h3>COLLECTION</h3>
+    </div>
+    <div>
+        <div class="subrow">
+            <h2>Field?&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+            <input type="checkbox" id="fuel-field">
         </div>
-        <div>
-            <h2>AUTO Low Boiler</h2>
-            <button class="decrease">-</button>
-            <input type="number" id="auto-low-boiler" value="0" min="0">
-            <button class="increase">+</button>
+        <div class="subrow">
+            <h2>Hopper?</h2>
+            <input type="checkbox" id="fuel-hopper">
         </div>
-        <div>
-            <h2>AUTO High Boiler</h2>
-            <button class="decrease5">-</button>
-            <input type="number" id="auto-high-boiler" value="0" min="0">
-            <button class="increase5">+</button>
+        <div class="subrow">
+            <h2>Human?</h2>
+            <input type="checkbox" id="fuel-human">
         </div>
     </div>
-    <div class="row">
-        <h1>TELEOP</h1>
-        <div>
-            <h2>Low Boiler</h2>
-            <button class="decrease">-</button>
-            <input type="number" id="low-boiler" value="0" min="0">
-            <button class="increase">+</button>
-        </div>
-        <div>
-            <h2>High Boiler Scores</h2>
-            <button class="decrease5">-</button>
-            <input type="number" id="high-boiler" value="0" min="0">
-            <button class="increase5">+</button>
-        </div>
-        <div>
-            <h2>High Boiler Misses</h2>
-            <button class="decrease5">-</button>
-            <input type="number" id="high-boiler-misses" value="0" min="0">
-            <button class="increase5">+</button>
-        </div>
-        <div>
-            <h2>Gears Delivered</h2>
-            <button class="decrease">-</button>
-            <input type="number" id="gear" value="0" min="0">
-            <button class="increase">+</button>
-        </div>
-        <div>
-            <h2>Climbed?</h2>
-            <select id="climbed">
-                <option>No</option>
-                <option>Attempted</option>
-                <option>Yes</option>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <textarea id="notes" placeholder="Write notes here..."></textarea>
-    </div>
-    <h1 style="position: absolute; bottom: 0; left: 0"><img src="logo_large.png" width="231"></h1>
+</div>
+<div class="row">
+    <textarea id="notes" placeholder="Write notes here..."></textarea>
+</div>
+<h1 style="position: absolute; bottom: 0; left: 0"><img src="logo_large.png" width="231"></h1>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
